@@ -1,4 +1,4 @@
-\# 📦 Retail Demand Forecasting — LSTM vs LightGBM (End-to-End)
+# 📦 Retail Demand Forecasting — LSTM vs LightGBM (End-to-End)
 
 
 
@@ -12,7 +12,7 @@ Le dépôt contient un pipeline complet : préparation des données, création d
 
 
 
-\## 🗂️ Dataset
+## 🗂️ Dataset
 
 Kaggle — \*Store Item Demand Forecasting Challenge\*  
 
@@ -27,10 +27,10 @@ Place `train.csv` ici :
 ```text
 
 data/train.csv
+````
 
 
-
-\## 🧱 Project Structure
+## 🧱 Project Structure
 
 
 
@@ -79,14 +79,14 @@ lstm-demand-forecasting/
 ├── requirements.txt
 
 └── README.md
-
+````
 
 
 ---
 
 
 
-\## ⚙️ Installation
+## ⚙️ Installation
 
 
 
@@ -94,11 +94,11 @@ lstm-demand-forecasting/
 
 python -m venv .venv
 
-\# Windows
+# Windows
 
 .venv\\Scripts\\activate
 
-\# Mac/Linux
+# Mac/Linux
 
 source .venv/bin/activate
 
@@ -112,11 +112,11 @@ pip install -r requirements.txt
 
 
 
-\## 🚀 Utilisation
+## 🚀 Utilisation
 
 
 
-\### 1) Entraîner le modèle LSTM
+### 1) Entraîner le modèle LSTM
 
 ```bash
 
@@ -136,7 +136,7 @@ Fichiers générés :
 
 
 
-\### 2) Évaluer et comparer les modèles
+### 2) Évaluer et comparer les modèles
 
 
 
@@ -152,11 +152,11 @@ Fichier généré :
 
 
 
-\* `reports/figures/forecast\_comparison.png`
+* `reports/figures/forecast\_comparison.png`
 
 
 
-\### 3) Produire une prédiction (ex: J+90)
+### 3) Produire une prédiction (ex: J+90)
 
 
 
@@ -180,11 +180,11 @@ Fichier généré :
 
 
 
-\## 🧠 Approche
+## 🧠 Approche
 
 
 
-\### Fenêtrage (supervisé)
+### Fenêtrage (supervisé)
 
 
 
@@ -206,11 +206,11 @@ Features calendaires ajoutées : `day-of-week`, `month`, `is\_weekend`, `day`.
 
 
 
-\## 🧩 Modèles
+## 🧩 Modèles
 
 
 
-\### Baselines
+### Baselines
 
 
 
@@ -222,7 +222,7 @@ Features calendaires ajoutées : `day-of-week`, `month`, `is\_weekend`, `day`.
 
 
 
-\### LSTM (TensorFlow/Keras)
+### LSTM (TensorFlow/Keras)
 
 
 
@@ -246,7 +246,7 @@ Sortie : vecteur de taille 7 (forecast multi-step).
 
 
 
-\## 📊 Résultats (test split)
+## 📊 Résultats (test split)
 
 
 
@@ -268,7 +268,7 @@ Sortie : vecteur de taille 7 (forecast multi-step).
 
 
 
-\## 🖼️ Visualisations
+## 🖼️ Visualisations
 
 
 
@@ -276,7 +276,7 @@ Les figures sont générées automatiquement lors de l’évaluation et sauvegar
 
 
 
-\### 1) Comparaison des modèles (horizon 7 jours)
+### 1) Comparaison des modèles (horizon 7 jours)
 
 \*\*Figure :\*\* `reports/figures/forecast\_comparison.png`  
 
@@ -298,7 +298,7 @@ Comparaison sur un exemple aléatoire :
 
 
 
-\### 2) Métriques d’évaluation (console)
+### 2) Métriques d’évaluation (console)
 
 Lors de `python -m src.evaluate ...`, le script affiche :
 
@@ -318,7 +318,7 @@ Ces métriques permettent de comparer les approches sur le split test, avec une 
 
 
 
-\## 🧪 Tests
+## 🧪 Tests
 
 
 
@@ -334,7 +334,7 @@ pytest -q
 
 
 
-\## 🔧 Configuration
+## 🔧 Configuration
 
 
 
@@ -354,7 +354,7 @@ Les principaux paramètres sont dans `configs/default.yaml` :
 
 
 
-\## 🔭 Next steps (roadmap)
+## 🔭 Next steps (roadmap)
 
 
 
