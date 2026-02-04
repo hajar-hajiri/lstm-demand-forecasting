@@ -2,7 +2,7 @@
 
 
 
-Prévision de la demande (ventes quotidiennes) sur un jeu de données retail multi-séries (\*\*store × item\*\*).  
+Prévision de la demande (ventes quotidiennes) sur un jeu de données retail multi-séries (**store × item**).  
 
 Le dépôt contient un pipeline complet : préparation des données, création de fenêtres temporelles, entraînement d’un modèle séquentiel (LSTM), baselines tabulaires, évaluation et génération de figures.
 
