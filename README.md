@@ -286,7 +286,7 @@ Comparaison sur un exemple aléatoire :
 
 
 
-!\[Forecast comparison](reports/figures/forecast\_comparison.png)
+![Forecast comparison](reports/figures/forecast\_comparison.png)
 
 
 
