@@ -249,20 +249,12 @@ Sortie : vecteur de taille 7 (forecast multi-step).
 ## 📊 Résultats (test split)
 
 
-
-| Modèle                     |       MAE |      RMSE |     sMAPE |
-
-| -------------------------- | --------: | --------: | --------: |
-
-| Naive(last)                |    54.677 |    61.302 |     1.975 |
-
-| MA(7)                      |    54.661 |    61.288 |     1.976 |
-
-| LightGBM (lags)            |     8.415 |    11.221 |     0.169 |
-
-| LSTM (global + embeddings) | **6.214** | **8.185** | **0.129** |
-
-
+| Modèle | MAE | RMSE | sMAPE |
+|---|---:|---:|---:|
+| Naive(last) | `54.677` | `61.302` | `1.975` |
+| MA(7) | `54.661` | `61.288` | `1.976` |
+| LightGBM (lags) | `8.415` | `11.221` | `0.169` |
+| LSTM (global + embeddings) | **`6.214`** | **`8.185`** | **`0.129`** |
 
 ---
 
