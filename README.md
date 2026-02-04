@@ -14,7 +14,7 @@ Le dépôt contient un pipeline complet : préparation des données, création d
 
 ## 🗂️ Dataset
 
-Kaggle — \*Store Item Demand Forecasting Challenge\*  
+Kaggle — *Store Item Demand Forecasting Challenge*  
 
 Colonnes : `date`, `store`, `item`, `sales`
 
@@ -130,9 +130,9 @@ Fichiers générés :
 
 
 
-\* `artifacts/model.keras`
+* `artifacts/model.keras`
 
-\* `artifacts/meta.json` (métadonnées + scaler)
+* `artifacts/meta.json` (métadonnées + scaler)
 
 
 
@@ -172,7 +172,7 @@ Fichier généré :
 
 
 
-\* `artifacts/forecast.csv`
+* `artifacts/forecast.csv`
 
 
 
@@ -192,9 +192,9 @@ Pour chaque série `(store, item)` :
 
 
 
-\* \*\*Entrée\*\* : 28 jours d’historique (`lookback=28`)
+* **Entrée** : 28 jours d’historique (`lookback=28`)
 
-\* \*\*Sortie\*\* : 7 jours à prédire (`horizon=7`)
+* **Sortie** : 7 jours à prédire (`horizon=7`)
 
 
 
@@ -214,11 +214,11 @@ Features calendaires ajoutées : `day-of-week`, `month`, `is\_weekend`, `day`.
 
 
 
-\* \*\*Naive(last)\*\* : répète la dernière valeur observée
+* **Naive(last)** : répète la dernière valeur observée
 
-\* \*\*MA(7)\*\* : moyenne mobile sur 7 jours
+* **MA(7)** : moyenne mobile sur 7 jours
 
-\* \*\*LightGBM (lags)\*\* : features de l’historique (`last`, `mean7`, `mean14`, `std7`, `trend`) + apprentissage direct multi-horizon
+* **LightGBM (lags)** : features de l’historique (`last`, `mean7`, `mean14`, `std7`, `trend`) + apprentissage direct multi-horizon
 
 
 
@@ -230,11 +230,11 @@ Modèle séquentiel global (un seul modèle pour toutes les séries) :
 
 
 
-\* `sales\_seq` (standardisée)
+* `sales\_seq` (standardisée)
 
-\* `cal\_seq` (features calendaires)
+* `cal\_seq` (features calendaires)
 
-\* embeddings `store\_id` / `item\_id` pour capturer les effets spécifiques à chaque série
+* embeddings `store\_id` / `item\_id` pour capturer les effets spécifiques à chaque série
 
 
 
@@ -260,7 +260,7 @@ Sortie : vecteur de taille 7 (forecast multi-step).
 
 | LightGBM (lags)            |     8.415 |    11.221 |     0.169 |
 
-| LSTM (global + embeddings) | \*\*6.214\*\* | \*\*8.185\*\* | \*\*0.129\*\* |
+| LSTM (global + embeddings) | **6.214** | **8.185** | **0.129** |
 
 
 
@@ -278,15 +278,15 @@ Les figures sont générées automatiquement lors de l’évaluation et sauvegar
 
 ### 1) Comparaison des modèles (horizon 7 jours)
 
-\*\*Figure :\*\* `reports/figures/forecast\_comparison.png`  
+**Figure :** `reports/figures/forecast\_comparison.png`  
 
 Comparaison sur un exemple aléatoire :
 
-\- \*\*True\*\* : ventes réelles sur les 7 jours à prédire  
+- **True** : ventes réelles sur les 7 jours à prédire  
 
-\- \*\*LSTM\*\* : prévision multi-horizon (7 jours)  
+- **LSTM** : prévision multi-horizon (7 jours)  
 
-\- \*\*Baselines\*\* : Naive(last), MA(7), LightGBM (lags)
+- **Baselines** : Naive(last), MA(7), LightGBM (lags)
 
 
 
@@ -302,11 +302,11 @@ Comparaison sur un exemple aléatoire :
 
 Lors de `python -m src.evaluate ...`, le script affiche :
 
-\- \*\*MAE\*\* (Mean Absolute Error)
+- **MAE** (Mean Absolute Error)
 
-\- \*\*RMSE\*\* (Root Mean Squared Error)
+- **RMSE** (Root Mean Squared Error)
 
-\- \*\*sMAPE\*\* (Symmetric Mean Absolute Percentage Error)
+- **sMAPE** (Symmetric Mean Absolute Percentage Error)
 
 
 
@@ -342,11 +342,11 @@ Les principaux paramètres sont dans `configs/default.yaml` :
 
 
 
-\* `lookback`, `horizon`
+* `lookback`, `horizon`
 
-\* split temporel (`train\_end`, `val\_end`, `test\_end`)
+* split temporel (`train\_end`, `val\_end`, `test\_end`)
 
-\* hyperparamètres (`epochs`, `batch\_size`, `lstm\_units`, `dropout`...)
+* hyperparamètres (`epochs`, `batch\_size`, `lstm\_units`, `dropout`...)
 
 
 
@@ -358,13 +358,13 @@ Les principaux paramètres sont dans `configs/default.yaml` :
 
 
 
-\- Ajouter des modèles SOTA de forecasting (ex: TFT / PatchTST / N-BEATS) et comparer aux baselines.
+- Ajouter des modèles SOTA de forecasting (ex: TFT / PatchTST / N-BEATS) et comparer aux baselines.
 
-\- Prédiction probabiliste (intervalles P50/P90) pour quantifier l’incertitude.
+- Prédiction probabiliste (intervalles P50/P90) pour quantifier l’incertitude.
 
-\- Monitoring : drift sur la distribution des ventes et recalibrage périodique.
+- Monitoring : drift sur la distribution des ventes et recalibrage périodique.
 
-\- Feature store léger : lags + événements (promotions, jours fériés) quand disponibles.
+- Feature store léger : lags + événements (promotions, jours fériés) quand disponibles.
 
 
 
