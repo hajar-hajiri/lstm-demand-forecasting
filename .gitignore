@@ -1,0 +1,21 @@
+# Virtual env
+.venv/
+venv/
+
+# Data (Kaggle)
+data/
+
+# Generated artifacts
+artifacts/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs
+*.log

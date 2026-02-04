@@ -1,0 +1,30 @@
+project:
+  seed: 42
+
+data:
+  raw_csv: "data/train.csv"
+  min_history_days: 200
+
+features:
+  lookback: 28
+  horizon: 7
+  add_calendar: true
+
+split:
+  train_end: "2016-12-31"
+  val_end: "2017-09-30"
+  test_end: "2017-12-31"
+
+train:
+  batch_size: 512
+  epochs: 12
+  lr: 0.001
+  lstm_units: 64
+  emb_dim: 8
+  dropout: 0.2
+  early_stopping_patience: 3
+
+artifacts:
+  dir: "artifacts"
+  model_path: "artifacts/model.keras"
+  meta_path: "artifacts/meta.json"
